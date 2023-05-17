@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Сортировка массивов</title>
+</head>
+<body>
+
+    <style>
+        .raz {
+            border: 0px solid red;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            min-height: 4em;
+            background: #A5F1FF;
+        }
+    </style>
+
+
+    <div class="sticky">
+
+        <h1><a href="#c" class="phone-block"><img src="https://static.tildacdn.com/tild6434-3636-4238-a465-666237633562/img_128015.png" width="53" height="53" /></a>Сортировка массивов<h1>
+
+    </div>
+
+
+    <div style="width: 1410px;">
+        <p id="c"></p>
+        <map id="stanleypark" name="stanleypark">
+            <h2> Содержание</h2>
+            <p> <font size="4"> <map id="stanleypark" name="stanleypark"> <a href="#c0"> <li> Что такое сортировка?</li> </a> </map> </font> </p>
+            <p> <font size="4"> <map id="stanleypark" name="stanleypark"> <a href="#c1"> <li> Сортировка пузырьком</li> </a> </map> </font> </p>
+            <p> <font size="4"> <map id="stanleypark" name="stanleypark"> <a href="#c2"> <li> Шейкерная сортировка</li> </a> </map> </font> </p>
+            <p> <font size="4"> <map id="stanleypark" name="stanleypark"> <a href="#c3"> <li> Сортировка прямым включением</li> </a> </map> </font> </p>
+            <p> <font size="4"> <map id="stanleypark" name="stanleypark"> <a href="#c4"> <li> Сортировка прямым выбором</li> </a> </map> </font> </p>
+            <p> <font size="4"> <map id="stanleypark" name="stanleypark"> <a href="#c5"> <li> Сортировка Шелла</li> </a> </map> </font> </p>
+            <p> <font size="4"> <map id="stanleypark" name="stanleypark"> <a href="#c6"> <li> Быстрая сортировка</li> </a> </map> </font> </p>
+
+            <h2 id="c0"> Что такое сортировка?</h2>
+            <p size="20">
+                <font size="4">
+                    Сортировка массива — расположение его элементов в некотором заданном порядке.
+                    В отсортированном массиве поиск элемента можно осуществлять, не просматривая весь
+                    массив. Например, в случае сортировки в порядке возрастания минимальный элемент
+                    массива всегда будет находиться на первом месте. Задача сортировки, как и любая
+                    другая задача, может решаться множеством способов, каждый из которых имеет как
+                    достоинства, так и недостатки.
+                </font>
+            </p>
+            <p> &nbsp;</p>
+            <h2 id="c1"> Сортировка пузырьком</h2>
+            <p>
+                <font size="4">
+                    <map id="stanleypark" name="stanleypark">
+                        Пузырьковая сортировка (Bubble Sort) - это алгоритм
+                        сортировки, который работает путем сравнения и перестановки соседних элементов списка до тех пор, пока все
+                        элементы не будут отсортированы в нужном порядке.
+                        Этот алгоритм считается учебным и почти не применяется на практике из-за низкой эффективности: он медленно
+                        работает на тестах, в которых маленькие элементы (их называют «черепахами») стоят в конце массива. Однако
+                        на нём основаны многие другие методы, например, шейкерная сортировка и сортировка расчёской.
+                    </map>
+                </font>
+            </p>
+            <figure class="fig-img">
+                <center>
+                    <img class="img" align="center" src="https://yastatic.net/s3/academy/admin/1_49e0bb0f63.gif" alt="" />
+                </center>
+                <figcaption class="fig-cap"> </figcaption>
+            </figure>
+            <p class="paragraph"> &nbsp;</p>
+            <p class="paragraph">
+                <font size="4">
+                    Метод
+                    назван ”методом пузырька”, потому что большие элементы, подобно пузырькам, ”всплывают” на соответствующую позицию в противоположность ”методу погружения” (т. е. методу простых вставок),
+                    в котором элементы погружаются на соответствующий уровень. Метод пузырька известен также
+                    под более прозаическими именами, такими, как ”обменная сортировка с выбором” или метод ”распространения”.
+                </font>
+            </p>
+            <center>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5JMInXAtnQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>
+            </center>
+            <h3> Принцип работы</h3>
+            <p> &nbsp;Процесс сортировки начинается с первых двух элементов списка. Если первый элемент больше второго, то они меняются местами. Затем процесс продолжается со второго и третьего элементов списка, и так далее до последней пары элементов, которые нужно сравнить и, если необходимо, переставить. После прогона по всему списку, наибольший элемент окажется в конце списка. Затем процесс повторяется снова, но уже без учета последнего элемента, который уже находится в нужном месте. Алгоритм продолжает работу до тех пор, пока все элементы не будут отсортированы.</p>
+            <div class="small-list">
+                <ol>
+                    <li> <font size="4"> Берём самый первый элемент массива и сравниваем его со вторым. Если первый больше второго &mdash; меняем их местами с первым, если нет &mdash; ничего не делаем.</font> </li>
+                    <li> <font size="4"> Затем берём второй элемент массива и сравниваем его со следующим &mdash; третьим. Если второй больше третьего &mdash; меняем их местами, если нет &mdash; ничего не делаем.</font> </li>
+                    <li> <font size="4"> Проходим так до предпоследнего элемента, сравниваем его с последним и ставим наибольший из них в конец массива. Всё, мы нашли самое большое число в массиве и поставили его на своё место.</font> </li>
+                    <li> <font size="4"> Возвращаемся в начало алгоритма и делаем всё снова точно так же, начиная с первого и второго элемента. Только теперь даём себе задание не проверять последний элемент &mdash; мы знаем, что теперь в конце массива самый большой элемент.&nbsp;</font> </li>
+                    <li> <font size="4"> Когда закончим очередной проход &mdash; уменьшаем значение финальной позиции, до которой проверяем, и снова начинаем сначала.</font> </li>
+                    <li> <font size="4"> Так делаем до тех пор, пока у нас не останется один элемент.</li>
+                </ol>
+            </div>
+            <p class="paragraph"> <img class="img   " src="https://yastatic.net/s3/academy/admin/184_2_fefe14fc80.png" alt="" width="341" height="179" /> </p>
+            <p class="paragraph"> &nbsp;</p>
+            <h3> Пример кода на Python</h3>
+            <pre>
+        def bubble(arr):
+        n=len(arr)
+        for i in range(n):
+        for j in range(0, n-i-1):
+        if arr[j] > arr[j+1]:
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+        print(arr)
+
+        arr = [44, 55, 12, 42, 94, 18, 6, 67]
+        bubble(arr)
+
+        </pre>
+
+            <h2 id="c2"> Шейкерная сортировка</h2>
+            <p>
+                <font size="4">
+                    Шейкерная сортировка (Cocktail Sort или Shaker Sort) - это модификация пузырьковой сортировки,
+                    которая работает в двух направлениях. Она сначала проходит по списку слева направо, как в пузырьковой сортировке,
+                    затем повторяет проход в обратном направлении, меняя порядок сортировки на противоположный. Это позволяет сократить
+                    количество проходов по списку и повысить эффективность алгоритма.
+                </font>
+            </p>
+            <figure class="fig-img">
+                <center>
+                    <img class="img" align="center" src="https://yastatic.net/s3/academy/admin/2_7d0736b702.gif" alt="" />
+                </center>
+                <figcaption class="fig-cap"> </figcaption>
+                <figcaption class="fig-cap">
+                    <map id="stanleypark" name="stanleypark">
+                        <h3> Принцип работы</h3>
+                    </map>
+                </figcaption>
+                <figcaption class="fig-cap"> <map id="stanleypark" name="stanleypark"> Процесс сортировки начинается с первых двух элементов списка. Если первый элемент больше второго, то они меняются местами. Затем процесс продолжается со второго и третьего элементов списка, и так далее до последней пары элементов, которые нужно сравнить и, если необходимо, переставить. После этого прохода наибольший элемент окажется в конце списка. Затем процесс повторяется, но в обратном направлении, начиная с последней пары элементов списка. Если последний элемент меньше предпоследнего, то они меняются местами. Затем процесс продолжается со предпоследнего и пред-предпоследнего элементов списка, и так далее до первой пары элементов, которые нужно сравнить и, если необходимо, переставить. После этого прохода наименьший элемент окажется в начале списка. Алгоритм продолжает работу до тех пор, пока все элементы не будут отсортированы.</map> </figcaption>
+            </figure>
+            <figure class="fig-img"> <img class="img   " src="https://yastatic.net/s3/academy/admin/184_4_009e08fefe.png" alt="" /> </figure>
+            <p> &nbsp;</p>
+            <h3> Пример кода на Python</h3>
+            <pre>
+        def shaker_sort(array):
+        length = len(array)
+        swapped = True
+        start_index = 0
+        end_index = length - 1
+
+        while (swapped == True):
+
+        swapped = False
+
+        # проход слева направо
+        for i in range(start_index, end_index):
+        if (array[i] > array[i + 1]):
+        # обмен элементов
+        array[i], array[i + 1] = array[i + 1], array[i]
+        swapped = True
+        print(arr)
+
+        # если не было обменов прерываем цикл
+        if (not (swapped)):
+        break
+
+        swapped = False
+
+        end_index = end_index - 1
+
+        # проход справа налево
+        for i in range(end_index - 1, start_index - 1, -1):
+        if (array[i] > array[i + 1]):
+        # обмен элементов
+        array[i], array[i + 1] = array[i + 1], array[i]
+        swapped = True
+        print(arr)
+
+        start_index = start_index + 1
+
+
+
+        arr = [44, 55, 12, 42, 94, 18, 6, 67]
+        shaker_sort(arr)
+
+        </pre>
+            <p> &nbsp;</p>
+            <h2 id="c3"> Сортировка прямым включением</h2>
+            <p>
+                <font size="4">
+                    Сортировка прямым включением (Insertion Sort) - это алгоритм сортировки,
+                    который работает путем вставки каждого элемента списка в уже отсортированную часть списка в нужное место.
+                </font>
+            </p>
+            <h3> Принцип работы</h3>
+        </map>
+        <p>
+            <font size="4">
+                Процесс сортировки начинается с первого элемента списка, который считается уже отсортированным.
+                Затем каждый следующий элемент списка вставляется в уже отсортированную часть списка в нужное место.
+                Для этого происходит сравнение текущего элемента со всеми предыдущими элементами отсортированной части списка,
+                пока не будет найдено место для вставки. Алгоритм продолжает работу до тех пор, пока все элементы не будут отсортированы.
+            </font>
+        </p>
+        <p> <font size="4"> Элементы массива условно разделяются на готовую последовательность</font> </p>
+        <p> <font size="4"> и входную последовательность</font> </p>
+        <p>
+            <font size="4">
+                На каждом шаге i-й элемент помещается на
+                подходящее место в готовую последовательность.
+                <br />
+                <center>
+                    <br /> <img src="https://prog-cpp.ru/wp-content/uploads/2014/05/sort1.png" alt="Сортировка прямыми включениями" />
+            </font>
+        </p>
+        </center >
+        <p>
+            <font size="4">
+                Сортировка прямым включением имеет сложность O(n^2), что делает ее неэффективной для
+                больших списков. Однако, на небольших списках она может работать быстрее, чем другие алгоритмы сортировки.
+            </font>
+        </p>
+        <p> &nbsp;</p>
+        <h3> Пример кода на Python</h3>
+        <pre>
+        def sort_pr(arr):
+        for i in range(1, len(arr)):
+        key = arr[i]
+        j=i-1
+        while j > = 0 and key < arr[j]:
+        arr[j+1] = arr[j]
+        j -= 1
+        arr[j+1] = key
+        print(arr)
+        arr = [44, 55, 12, 42, 94, 18, 6, 67]
+        sort_pr(arr)
+        </pre>
+        <p> &nbsp;</p>
+        <h2 id="c4"> Сортировка прямым выбором</h2>
+        <p>
+            <font size="4">
+                Сначала нужно рассмотреть подмножество массива и найти в нём максимум (или минимум).
+                Затем выбранное значение меняют местами со значением первого неотсортированного элемента. Этот шаг
+                нужно повторять до тех пор, пока в массиве не закончатся неотсортированные подмассивы.
+            </font>
+        </p>
+        <figure class="fig-img">
+            <center>
+                <img class="img   " src="https://yastatic.net/s3/academy/admin/184_9_b67b9a57f4.gif" alt="" />
+            </center>
+            <figcaption class="fig-cap"> </figcaption>
+        </figure>
+        <p class="paragraph"> &nbsp;</p>
+        <figure class="fig-img"> </figure>
+        <h3> Принцип работы</h3>
+        <p> <font size="4"> 1. Находим минимальный элемент в массиве.</p>
+        <p> <font size="4"> 2. Меняем местами минимальный элемент с первым элементом в массиве.</font> </p>
+        <p> <font size="4"> 3. Находим минимальный элемент в оставшейся части массива (начиная со второго элемента).</font> </p>
+        <p> <font size="4"> 4. Меняем местами минимальный элемент с вторым элементом в массиве.</font> </p>
+        <p> <font size="4"> 5. Продолжаем этот процесс до тех пор, пока не отсортируем весь массив.</font> </p>
+        <p> &nbsp;</p>
+        <p> <img class="img   " src="https://yastatic.net/s3/academy/admin/184_10_b1a40207ae.png" alt="" /> </p>
+        <h3> Пример кода на Python</h3>
+        <pre>
+        def selection(arr):
+        n = len(arr)
+        for i in range(n):
+        min_i = i
+        for j in range(i + 1, n):
+        if arr[j] < arr[min_i]:
+        min_i = j
+        arr[i], arr[min_i] = arr[min_i], arr[i]
+        print(arr)
+
+        arr = [44, 55, 12, 42, 94, 18, 6, 67]
+        selection(arr)
+        </pre>
+        <h2 id="c5"> Сортировка Шелла</h2>
+        <p>
+            <font size="4">
+                Сортировка Шелла (Shell sort) - это усовершенствованный алгоритм сортировки вставками,
+                который был предложен Дональдом Шеллом в 1959 году.
+            </font>
+        </p>
+        <h3> Принцип работы</h3>
+        <p> <font size="4"> &nbsp;1. Выбираем шаг h, который будет определять размер подмассивов для сортировки.</font> </p>
+        <p>
+            <font size="4">
+                2. Для каждого шага h выполняем сортировку вставками для подмассивов, начинающихся с элементов,
+                отстоящих друг от друга на расстоянии h.
+            </font>
+        </p>
+        <p> <font size="4"> 3. Уменьшаем шаг h и повторяем шаг 2 до тех пор, пока шаг не станет равным 1.</font> </p>
+        <center>
+            <p> <br /> <img src="https://prog-cpp.ru/wp-content/uploads/2014/05/sort5.png" alt="сортировка Шелла" /> </p>
+        </center>
+        <table class="infobox" style="width: 341px; height: 230px;" width="401">
+            <tbody>
+                <tr>
+                    <th style="width: 134.406px;"> Худшее время</th>
+                    <td class="" style="width: 190.594px;">
+                        <p> O(<em>n</em><sup>2</sup>)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 134.406px;"> Лучшее время</th>
+                    <td class="" style="width: 190.594px;">
+                        <p> O(<em>n</em>&nbsp;log<sup> 2</sup> &nbsp;<em> n</em> )</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 134.406px;"> Среднее время</th>
+                    <td class="" style="width: 190.594px;">
+                        <p> зависит от выбранных шагов</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 134.406px;"> Затраты памяти</th>
+                    <td class="" style="width: 190.594px;">
+                        <p> О(n) всего, O(1) дополнительно</p>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <center>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/lvts84Qfo8o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>
+        </center>
+        <h3> Пример кода на Python</h3>
+        <pre>
+        def shell(inp):
+        n = len(inp)
+        h = n // 2
+        while h > 0:
+        for i in range(h, n):
+        t = inp[i]
+        j = i
+        while j > = h and inp[j - h] > t:
+        inp[j] = inp[j - h]
+        j -= h
+        inp[j] = t
+        print(arr)
+        h = h // 2
+        # print(arr)
+
+        arr = [44, 55, 12, 42, 94, 18, 6, 67]
+        shell(arr)
+        </pre>
+
+        <h2 id="c6"> Быстрая сортировка</h2>
+        <figure class="fig-img">
+            <center>
+                <img class="img   " src="https://yastatic.net/s3/academy/admin/184_11_3c7583c6cd.gif" alt="" />
+            </center>
+            <figcaption class="fig-cap"> </figcaption>
+        </figure>
+        <p class="paragraph">
+            <font size="4">
+                Этот алгоритм состоит из трёх шагов. Сначала из массива нужно
+                выбрать один элемент &mdash; его обычно называют опорным. Затем другие элементы в массиве
+                перераспределяют так, чтобы элементы меньше опорного оказались до него, а большие или равные
+                &mdash; после. А дальше рекурсивно применяют первые два шага к подмассивам справа и слева от
+                опорного значения.
+            </font>
+        </p>
+        <p class="paragraph">
+            <font size="4">
+                Быструю сортировку изобрели в 1960 году для машинного перевода:
+                тогда словари хранились на магнитных лентах, а сортировка слов обрабатываемого текста позволяла
+                получить переводы за один прогон ленты, без перемотки назад.
+            </font>
+        </p>
+        <figure class="fig-img"> <img class="img   " src="https://yastatic.net/s3/academy/admin/184_12_f91ff3fc7b.png" alt="" /> </figure>
+        <center>
+            <iframe src="https://vk.com/video_ext.php?oid=-91031095&id=456243598&hash=69853bcf9a22b1a6&hd=2" width="853" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen> </iframe>
+        </center>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>Источники:</p>
+    <li>Н.Вирт "Алгоритмы и структуры данных" том 3 </li>
+        <li><a href="https://academy.yandex.ru/journal/osnovnye-vidy-sortirovok-i-primery-ikh-realizatsii /">academy.yandex.ru</a></li>
+        <li><a href="https://proglib.io/p/7-sposobov-sortirovki-massivov-na-primere-s-s-illyustraciyami-2022-04-20">proglib.io</a></li>
+        <li><a href="https://bimlibik.github.io/posts/sorting-algorithm /">bimlibik.github.io</a></li>
+        <li><a href="https://ru.hexlet.io/courses/basic-algorithms/lessons/sorting/theory_unit">ru.hexlet.io</a></li>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p style="text-align: right;">Электронный справочник&nbsp;</p>
+    <p style="text-align: right;">по теме&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+    <p style="text-align: right;">"Сортировка массивов." &nbsp; &nbsp; &nbsp;</p>
+    <p style="text-align: right;">&nbsp;</p>
+    <p style="text-align: right;">Выполнила: студентка 09-261гр.</p>
+    <p style="text-align: right;">Мухтарова Р.Ф.</p>
+    <p style="text-align: right;">Проверил: старший преподаватель</p>
+    <p style="text-align: right;">Гатауллин Р.М.</p>
+    <p style="text-align: right;">&nbsp;</p>
+    <p style="text-align: right;">&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</body>
+        </html >
